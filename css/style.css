@@ -28,6 +28,7 @@ p, a {
 
 h1 {
     color: #ffd438;
+    padding-bottom: 15px;
 }
 
 h1, h2, h3 {
@@ -52,7 +53,8 @@ header {
 }
 
 nav {
-    padding-top: 5px;
+    padding-top: 6px;
+    transition: min-height .8s ease-in-out;
 }
 
 nav ul li {
@@ -71,7 +73,7 @@ nav ul li a:hover {
 
 .nav-grid {
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 2fr 2fr;
     padding-top: 10px;
 }
 
@@ -80,7 +82,7 @@ nav ul li a:hover {
 }
 
 .logo img {
-    width: 250px;
+    width: 275px;
 }
 
 .hero-banner {
@@ -99,6 +101,16 @@ nav ul li a:hover {
     border-radius: 4px;
 }
 
+#checkbox, #menu-icon {
+    display: none;
+    top: -20px;
+    right: -20px;
+}
+
+.menu-wrap {
+    text-align: right;
+}
+
 /* Greeting */
 
 .greeting {
@@ -113,6 +125,11 @@ nav ul li a:hover {
 
 .greeting h2 {
     color: #ffd438;
+}
+
+.projects-title {
+    padding-top: 40px;
+    text-align: center;
 }
 
 /* Services */
@@ -134,6 +151,14 @@ nav ul li a:hover {
     padding-top: 10px;
 }
 
+.grid-item {
+    padding: 10px 0;
+}
+
+.grid-item h2 {
+    padding: 5px 0;
+}
+
 /* Media */
 
 .media {
@@ -146,20 +171,46 @@ nav ul li a:hover {
     padding-bottom: 15px;
 }
 
-.media-item img {
-    width: 350px;
+.media a {
+    color: black;
+    background-color: #ffd438;
+    padding: 10px;
+    border-radius: 4px;
+}
 
+.media-item img {
+    width: 100%;
 }
 
 .media p {
     color: #183a3a;
 }
 
-.media-item {
-    padding: 5px 0;
+.media-item h3 {
+    padding-top: 10px;
 }
 
-.media-title {
+.media-item {
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 40px;
+}
+
+/* Projects */
+
+.projects {
+    padding-bottom: 40px;
+    background-image: url(../img/marble.jpg);
+    background-repeat: none;
+    background-size: cover;
+    }
+
+.project-grid {
+    padding: 30px 60px;
+}
+
+.project-item img {
+    width: 100%;
     text-align: center;
 }
 
@@ -188,6 +239,15 @@ nav ul li a:hover {
     padding-bottom: 10px;
 }
 
+.copyright {
+    background-color: #183a3a;
+    margin: 0;
+    padding: 10px 0;
+    text-align: center;
+    color: #ffd438;
+    font-size: 8pt;
+}
+
 /* Queries */
 
 @media screen and (min-width: 1000px) {
@@ -195,6 +255,10 @@ nav ul li a:hover {
     .logo img {
         width: 350px;
     }    
+
+    .grid-item h2 {
+        padding-bottom: 8px;
+    }
 
     .hero-banner {
         padding: 170px 0;
@@ -214,6 +278,30 @@ nav ul li a:hover {
         padding: 0 50px;
     }
     
+    .projects-title {
+        text-align: left;
+    }    
+
+    .project-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        text-align: center;
+        column-gap: 0;
+        min-width: 100%;
+        margin: 0;
+        padding: 40px 0;
+        padding-bottom: 0;
+    }
+    
+    .project-item {
+        margin: 0;
+        padding: 0;
+    }
+
+    .project-item img {
+        width: 300px;
+    }
+
     .media-title {
         text-align: left;
     }    
@@ -235,6 +323,63 @@ nav ul li a:hover {
     .footer ul {
         text-align: center;
     }
+    
+
+}
+
+@media screen and (max-width: 800px) {
+    
+        /* ---Hamburger--- */
+
+        #menu-icon {
+            font-size: 2em;
+            display: block;
+            position: absolute;
+            top: 15px;
+            right: 50px;
+        }
+
+        #menu-icon:hover {
+            color: #ffd438;
+        }
+
+        #checkbox {
+            display: none;
+        }
+
+        #checkbox:checked ~ nav ul {
+            max-height: 11em;
+        }
+
+        nav {
+            position: absolute;
+            top: 0em;
+            right: 0em;
+            padding-top: 5px;
+            padding-right: 5px;
+        }
+
+        .menu-wrap {
+            width: 100%;
+            height: 3em;
+        }
+
+        nav ul {
+            overflow: hidden;
+            max-height: 0em;
+            transition: max-height .8s ease-out;
+            position: absolute;
+            top: 45px;
+            right: 50px;
+            text-align: right;
+
+        }
+
+        nav ul li {
+            display: block;
+        }
+
+        /* ----- */
 
     
 }
